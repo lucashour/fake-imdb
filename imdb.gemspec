@@ -24,6 +24,9 @@ Gem::Specification.new do |spec|
     'lib/imdb',
     'lib/imdb/connector'
   ]
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {spec}/*`.split("\n")
+  spec.require_paths = ['lib']
 
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
